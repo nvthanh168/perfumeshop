@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ShopNuocHoa.Models.SanPham>
 @using ShopNuocHoa.Models
 @{
-    ViewBag.Title = "ProCata";
+    ViewBag.Title = "ProbyTH";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/styles/categories_responsive.css" rel="stylesheet" />
@@ -9,20 +9,22 @@
 <div class="container product_section_container">
     <div class="row">
         <div class="col product_section clearfix">
+
             <!-- Breadcrumbs -->
 
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
                     <li><a href="/Home/Index">Trang chủ</a></li>
+                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Thương hiệu</a></li>
                     @{
-                        LoaiSP loai = ViewBag.LoaiSP as LoaiSP;
-                        if (loai == null)
+                        ThuongHieu th = ViewBag.TH as ThuongHieu;
+                        if (th == null)
                         {
-                            <li><a href="/Product/ProCata"><i class="fa fa-angle-right" aria-hidden="true"></i>@ViewBag.tenLoai</a></li>
+                            <li><a href="/Product/ProbyTH"><i class="fa fa-angle-right" aria-hidden="true"></i>@ViewBag.tenLoai</a></li>
                         }
                         else
                         {
-                            <li><a href="/Product/ProCata/@loai.maLoai"><i class="fa fa-angle-right" aria-hidden="true"></i>@ViewBag.tenLoai</a></li>
+                            <li><a href="/Product/ProbyTH/@th.maTH"><i class="fa fa-angle-right" aria-hidden="true"></i>@ViewBag.tenTH</a></li>
                         }
                     }
 
@@ -30,9 +32,9 @@
                 </ul>
             </div>
 
-            @{
-                Html.RenderPartial("_Category");
-            }
+           @{ 
+               Html.RenderPartial("_Category");
+           }
 
             <!-- Main Content -->
 
@@ -142,11 +144,26 @@
 
                             </div>
 
+
+                            <br />
+                            <br />
+                            <!-- Mo ta thuong hieu -->
+                            <div class="row">
+                                <div class="col">
+                                    <div class="tab_text_block">
+                                        <h4>@th.tenTH</h4>
+                                        <p>@th.moTa</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+  
+                
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 

@@ -13,17 +13,22 @@ namespace ShopNuocHoa.Models
         [StringLength(5)]
         public string maSP { get; set; }
 
+        [Column(TypeName = "ntext")]
+        [Required]
+        public string tenSP { get; set; }
+
+        [Required]
         [StringLength(5)]
         public string maLoai { get; set; }
 
         [Required]
-        [StringLength(30)]
-        public string tenSP { get; set; }
+        [StringLength(5)]
+        public string maTH { get; set; }
 
         [Column(TypeName = "ntext")]
         public string moTa { get; set; }
 
-        public int? donGia { get; set; }
+        public int donGia { get; set; }
 
         public int? soLuong { get; set; }
 
@@ -31,5 +36,7 @@ namespace ShopNuocHoa.Models
         public string Anh { get; set; }
 
         public virtual LoaiSP LoaiSP { get; set; }
+
+        public virtual ThuongHieu ThuongHieu { get; set; }
     }
 }

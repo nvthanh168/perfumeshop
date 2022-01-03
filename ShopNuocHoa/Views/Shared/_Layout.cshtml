@@ -2,10 +2,14 @@
 @using System.Data.SqlClient
 @using ShopNuocHoa.Models
 @using System.Configuration
-@{ SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["strconnection"].ConnectionString);
+@{ SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["strConnect"].ConnectionString);
     SqlDataAdapter da = new SqlDataAdapter("Select * from LoaiSP", con);
+    SqlDataAdapter daTH = new SqlDataAdapter("Select * from ThuongHieu", con);
     DataTable dt = new DataTable();
-    da.Fill(dt); }
+    DataTable dtTH = new DataTable();
+    da.Fill(dt);
+    daTH.Fill(dtTH);
+    }
 
 <html lang="vi">
 <head>
@@ -67,10 +71,10 @@
                             </div>
                             <nav class="navbar">
                                 <ul class="navbar_menu">
-                                    <li><a href="/Home/Index">Trang chủ</a></li>
+                                    <li><a href="/Home/Index">Home</a></li>
                                     <li class="dropdown">
                                         <a href="/Product/ProCata" class="dropdown-toggle"
-                                           data-toggle="dropdown">Sản phẩm</a>
+                                           data-toggle="dropdown">Products</a>
                                         <ul class="dropdown-menu container-fluid">
                                             <li class="block-container">
                                                 <ul class="block">
@@ -83,8 +87,24 @@
                                             </li>
 
                                         </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="/Product/ProbyTH" class="dropdown-toggle"
+                                           data-toggle="dropdown">Product brands</a>
+                                        <ul class="dropdown-menu container-fluid">
+                                            <li class="block-container">s
+                                                <ul class="block">
+                                                    @for (int i = 0; i < dtTH.Rows.Count; i++)
+                                                    {
+                                        <li class="link_container">
+                                            <a href="/Product/ProbyTH/@dtTH.Rows[i][0].ToString()">@dtTH.Rows[i][1].ToString()</a>
+                                        </li>}
+                                                </ul>
+                                            </li>
 
-                                    <li><a href="#">Khuyến mãi</a></li>
+                                        </ul>
+                                    </li>
+                                  
                                     <li><a href="#">pages</a></li>
                                     <li><a href="#">blog</a></li>
                                     <li><a href="contact.html">contact</a></li>
@@ -251,7 +271,7 @@
                     <div class="col-lg-6">
                         <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="http://facebook.com/eelcud"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>

@@ -10,6 +10,7 @@ namespace ShopNuocHoa.Controllers
     {
         SanPhamModels db = new SanPhamModels();
         LoaiSPModels lspModel = new LoaiSPModels();
+        ThuongHieuModels thModel = new ThuongHieuModels();
         // GET: Product
         public ViewResult ProDetail(string id)
         {
@@ -21,7 +22,6 @@ namespace ShopNuocHoa.Controllers
         public ViewResult ProCata(string id)
         {
             LoaiSP lsp;
-            SanPhamModels db = new SanPhamModels();
             List<SanPham> listSp;
             List<LoaiSP> list = lspModel.getAllLSP();
             if (id == null)
@@ -38,9 +38,28 @@ namespace ShopNuocHoa.Controllers
                 ViewBag.LoaiSP = lsp;
                 ViewBag.tenLoai = tenlsp;
             }
-            //lay ra ten loai sp
-           
           
+            return View(listSp);
+        }
+        public ViewResult ProbyTH(string id)
+        {
+            ThuongHieu th;
+            SanPham sanPham = new SanPham();
+            List<SanPham> listSp;
+            if (id == null)
+            {
+
+                listSp = db.getAllSP();
+                ViewBag.tenLoai = "Tất cả sản phẩm";
+            }
+            else
+            {
+                th = thModel.get1TH(id);
+                listSp = db.getSPbyThuongHieu(id);
+                var tenTH = th.tenTH;
+                ViewBag.TH = th;
+                ViewBag.tenTH = tenTH;
+            }
             return View(listSp);
         }
     }

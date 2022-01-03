@@ -9,7 +9,7 @@ namespace ShopNuocHoa.Models
 {
     public class LoaiSPModels
     {
-        DBContext dbsp = new DBContext();
+        DBModel dbsp = new DBModel();
 
         public List<LoaiSP> getAllLSP()
         {

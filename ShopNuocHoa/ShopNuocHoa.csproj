@@ -135,11 +135,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DBContext.cs" />
+    <Compile Include="Models\DBModel.cs" />
     <Compile Include="Models\LoaiSP.cs" />
     <Compile Include="Models\LoaiSPModels.cs" />
     <Compile Include="Models\SanPham.cs" />
     <Compile Include="Models\SanPhamModels.cs" />
+    <Compile Include="Models\ThuongHieu.cs" />
+    <Compile Include="Models\ThuongHieuModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +160,8 @@
     <Content Include="Content\images\desc_1.jpg" />
     <Content Include="Content\images\desc_2.jpg" />
     <Content Include="Content\images\desc_3.jpg" />
+    <Content Include="Content\images\dong_ho_nam.jpg" />
+    <Content Include="Content\images\dong_ho_nu.jpg" />
     <Content Include="Content\images\map_marker.png" />
     <Content Include="Content\images\products\212 Vip Limited.jpg" />
     <Content Include="Content\images\products\212-Sexy-men.jpg" />
@@ -166,22 +170,21 @@
     <Content Include="Content\images\products\212-vip-men-are-you-in-the-list-300x300.jpg" />
     <Content Include="Content\images\products\212-vip-rose.jpg" />
     <Content Include="Content\images\products\212_nyc_men.jpg" />
-    <Content Include="Content\images\products\alaia_latte_corpo_def.jpg" />
     <Content Include="Content\images\products\ACQUA-DI-GIO.jpg" />
     <Content Include="Content\images\products\acqua-di-gioia-edp.jpg" />
     <Content Include="Content\images\products\ACQUA-DI-GIÒ-ABSOLU.jpg" />
-    <Content Include="Content\images\products\afnan_souvenir_floral_bouquet_edp_100ml_for_women.jpg" />
-    <Content Include="Content\images\products\allure-edition-blanche-edp.jpg" />
-    <Content Include="Content\images\products\AM.jpg" />
     <Content Include="Content\images\products\amouage-lyric.jpg" />
     <Content Include="Content\images\products\AMOUAGE-MEMOIR-MAN.jpg" />
     <Content Include="Content\images\banner-nuoc-hoa-nam.jpg" />
     <Content Include="Content\images\banner-the-gioi-nuoc-hoa-nu.jpg" />
-    <Content Include="Content\images\products\Carolina-Herrera-212-Sexy-for-Women-Eau-De-Parfum-100ml-kenya-1.jpg" />
+    <Content Include="Content\images\products\armaf-club-de-nuit-intense.jpg" />
+    <Content Include="Content\images\products\club-de-nuit-woman12.jpg" />
     <Content Include="Content\images\products\gio-den.jpg" />
     <Content Include="Content\images\products\gio-profondo-2020.jpg" />
     <Content Include="Content\images\phukien.jpg" />
-    <Content Include="Content\images\products\Souvenir-Desert-Rose.jpg" />
+    <Content Include="Content\images\products\gucci-bamboo-for-women.png" />
+    <Content Include="Content\images\products\gucci-guilty.jpg" />
+    <Content Include="Content\images\products\gucci-pour-homme-edt.jpg" />
     <Content Include="Content\images\product_1.png" />
     <Content Include="Content\images\product_10.png" />
     <Content Include="Content\images\product_2.png" />
@@ -204,6 +207,7 @@
     <Content Include="Content\images\products\tuixachdo.jpg" />
     <Content Include="Content\images\products\vi-nam-tommy-hilfiger-men-s-thin-sleek-casual-bifold-wallet-with-6-credit-card-pockets.jpg" />
     <Content Include="Content\images\products\vi-nam-tommy-hilfiger-mens-ranger-passcase-brown-5673-02-mau-nau.jpg" />
+    <Content Include="Content\images\tui_xach.jpg" />
     <Content Include="Content\plugins\easing\easing.js" />
     <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -305,6 +309,7 @@
     <Content Include="Views\Product\ProCata.cshtml" />
     <Content Include="Views\Shared\_Category.cshtml" />
     <Content Include="Views\GioHang\ShowCart.cshtml" />
+    <Content Include="Views\Product\ProbyTH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

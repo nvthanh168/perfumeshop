@@ -8,21 +8,19 @@ using System.Linq;
 
 namespace ShopNuocHoa.Models
 {
-    public partial class DBContext : DbContext
+    public partial class DBModel : DbContext
     {
-        //dong mo ket noi
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt; //bang luu tru ban sao CSDL
-        string str = ConfigurationManager.ConnectionStrings["strconnection"].ConnectionString;
-        public DBContext()
-            : base("name=strconnection")
+        string str = ConfigurationManager.ConnectionStrings["strConnect"].ConnectionString;
+        public DBModel()
+            : base("name=strConnect")
         {
-            con = new SqlConnection(str); //mo ket noi csdl
+            con = new SqlConnection(str);
         }
 
-        //func load data
         public DataTable readData(string query)
         {
             con.Open();
@@ -42,14 +40,25 @@ namespace ShopNuocHoa.Models
             cmd.Dispose();
             con.Close();
         }
+
         public virtual DbSet<LoaiSP> LoaiSP { get; set; }
         public virtual DbSet<SanPham> SanPham { get; set; }
+        public virtual DbSet<ThuongHieu> ThuongHieu { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<LoaiSP>()
                 .Property(e => e.maLoai)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<LoaiSP>()
+                .Property(e => e.Anh)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<LoaiSP>()
+                .HasMany(e => e.SanPham)
+                .WithRequired(e => e.LoaiSP)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SanPham>()
                 .Property(e => e.maSP)
@@ -60,8 +69,21 @@ namespace ShopNuocHoa.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<SanPham>()
+                .Property(e => e.maTH)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SanPham>()
                 .Property(e => e.Anh)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<ThuongHieu>()
+                .Property(e => e.maTH)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ThuongHieu>()
+                .HasMany(e => e.SanPham)
+                .WithRequired(e => e.ThuongHieu)
+                .WillCascadeOnDelete(false);
         }
     }
 }

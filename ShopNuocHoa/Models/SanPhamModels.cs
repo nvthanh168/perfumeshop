@@ -9,7 +9,7 @@ namespace ShopNuocHoa.Models
     public class SanPhamModels
     {
 
-        DBContext dbsp = new DBContext();
+        DBModel dbsp = new DBModel();
 
         public List<SanPham> getAllSP()
         {
@@ -19,12 +19,13 @@ namespace ShopNuocHoa.Models
             {
                 SanPham sp = new SanPham();
                 sp.maSP = dr[0].ToString();
-                sp.maLoai = dr[1].ToString();
-                sp.tenSP = dr[2].ToString();
-                sp.moTa = dr[3].ToString();
-                sp.donGia = int.Parse(dr[4].ToString());
-                sp.soLuong = int.Parse(dr[5].ToString());
-                sp.Anh = dr[6].ToString();
+                sp.tenSP = dr[1].ToString();
+                sp.maLoai = dr[2].ToString();
+                sp.maTH = dr[3].ToString();
+                sp.moTa = dr[4].ToString();
+                sp.donGia = int.Parse(dr[5].ToString());
+                sp.soLuong = int.Parse(dr[6].ToString());
+                sp.Anh = dr[7].ToString();
                 listSp.Add(sp);
             }
             return listSp;
@@ -34,12 +35,13 @@ namespace ShopNuocHoa.Models
             DataTable dt = dbsp.readData("SELECT * FROM SanPham WHERE maSP = '" + id + "'");
             SanPham sp = new SanPham();
             sp.maSP = dt.Rows[0][0].ToString();
-            sp.maLoai = dt.Rows[0][1].ToString();
-            sp.tenSP = dt.Rows[0][2].ToString();
-            sp.moTa = dt.Rows[0][3].ToString();
-            sp.donGia = int.Parse(dt.Rows[0][4].ToString());
-            sp.soLuong = int.Parse(dt.Rows[0][5].ToString());
-            sp.Anh = dt.Rows[0][6].ToString();
+            sp.tenSP = dt.Rows[0][1].ToString();
+            sp.maLoai = dt.Rows[0][2].ToString();
+            sp.maTH = dt.Rows[0][3].ToString();
+            sp.moTa = dt.Rows[0][4].ToString();
+            sp.donGia = int.Parse(dt.Rows[0][5].ToString());
+            sp.soLuong = int.Parse(dt.Rows[0][6].ToString());
+            sp.Anh = dt.Rows[0][7].ToString();
             return sp;
         }
 
@@ -51,12 +53,33 @@ namespace ShopNuocHoa.Models
             {
                 SanPham sp = new SanPham();
                 sp.maSP = dr[0].ToString();
-                sp.maLoai = dr[1].ToString();
-                sp.tenSP = dr[2].ToString();
-                sp.moTa = dr[3].ToString();
-                sp.donGia = int.Parse(dr[4].ToString());
-                sp.soLuong = int.Parse(dr[5].ToString());
-                sp.Anh = dr[6].ToString();
+                sp.tenSP = dr[1].ToString();
+                sp.maLoai = dr[2].ToString();
+                sp.maTH = dr[3].ToString();
+                sp.moTa = dr[4].ToString();
+                sp.donGia = int.Parse(dr[5].ToString());
+                sp.soLuong = int.Parse(dr[6].ToString());
+                sp.Anh = dr[7].ToString();
+                listSp.Add(sp);
+            }
+            return listSp;
+        }
+
+        public List<SanPham> getSPbyThuongHieu(string id)
+        {
+            DataTable dt = dbsp.readData("SELECT * FROM SanPham WHERE maTH = '" + id + "'");
+            List<SanPham> listSp = new List<SanPham>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                SanPham sp = new SanPham();
+                sp.maSP = dr[0].ToString();
+                sp.tenSP = dr[1].ToString();
+                sp.maLoai = dr[2].ToString();
+                sp.maTH = dr[3].ToString();
+                sp.moTa = dr[4].ToString();
+                sp.donGia = int.Parse(dr[5].ToString());
+                sp.soLuong = int.Parse(dr[6].ToString());
+                sp.Anh = dr[7].ToString();
                 listSp.Add(sp);
             }
             return listSp;

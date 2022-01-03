@@ -4,13 +4,13 @@
 @using ShopNuocHoa.Models
 @using System.Configuration
 @{
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["strconnection"].ConnectionString);
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["strConnect"].ConnectionString);
     SqlDataAdapter da = new SqlDataAdapter("Select * from LoaiSP", con);
     DataTable dt = new DataTable();
     da.Fill(dt);
 }
 @{
-    ViewBag.Title = "Trang chủ";
+    ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col text-center">
                 <div class="section_title new_arrivals_title">
-                    <h2>Sản phẩm mới</h2>
+                    <h2>New Arrivals</h2>
                 </div>
             </div>
         </div>
