@@ -80,9 +80,10 @@
                                                 <ul class="block">
                                                     @for (int i = 0; i < dt.Rows.Count; i++)
                                                     {
-                                        <li class="link_container">
-                                            <a href="/Product/ProCata/@dt.Rows[i][0].ToString()">@dt.Rows[i][1].ToString()</a>
-                                        </li>}
+                                                        <li class="link_container">
+                                                            <a href="/Product/ProCata/@dt.Rows[i][0].ToString()">@dt.Rows[i][1].ToString()</a>
+                                                        </li>
+}
                                                 </ul>
                                             </li>
 
@@ -92,19 +93,21 @@
                                         <a href="/Product/ProbyTH" class="dropdown-toggle"
                                            data-toggle="dropdown">Product brands</a>
                                         <ul class="dropdown-menu container-fluid">
-                                            <li class="block-container">s
+                                            <li class="block-container">
+                                                
                                                 <ul class="block">
                                                     @for (int i = 0; i < dtTH.Rows.Count; i++)
                                                     {
-                                        <li class="link_container">
-                                            <a href="/Product/ProbyTH/@dtTH.Rows[i][0].ToString()">@dtTH.Rows[i][1].ToString()</a>
-                                        </li>}
+                                                        <li class="link_container">
+                                                            <a href="/Product/ProbyTH/@dtTH.Rows[i][0].ToString()">@dtTH.Rows[i][1].ToString()</a>
+                                                        </li>
+}
                                                 </ul>
                                             </li>
 
                                         </ul>
                                     </li>
-                                  
+
                                     <li><a href="#">pages</a></li>
                                     <li><a href="#">blog</a></li>
                                     <li><a href="contact.html">contact</a></li>

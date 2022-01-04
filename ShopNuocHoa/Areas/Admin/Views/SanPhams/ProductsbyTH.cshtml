@@ -1,18 +1,17 @@
 ﻿@model IEnumerable<ShopNuocHoa.Areas.Admin.Models.SanPham>
-
+@using ShopNuocHoa.Areas.Admin.Models
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ProductsbyTH";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
 <link href="~/Areas/Admin/Data/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 <!-- Main Content -->
 <div id="content">
 
     <!-- Topbar -->
     @*<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <h1 class="h3 mb-2 text-gray-800" style="color:black"><b>Quản lý sản phẩm</b></h1>
-    </nav>*@
+            <h1 class="h3 mb-2 text-gray-800" style="color:black"><b>Quản lý sản phẩm</b></h1>
+        </nav>*@
     <!-- End of Topbar -->
     <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -20,7 +19,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h4 class="m-0 font-weight-bold text-primary">Danh sách tất cả sản phẩm</h4>
+                <h4 class="m-0 font-weight-bold text-primary">Thương hiệu: @ViewBag.tenTH</h4>
                 <a class="float-lg-right btn btn-primary" href="/Admin/SanPhams/Create">Thêm sản phẩm</a>
 
             </div>
@@ -84,7 +83,7 @@
 
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.ThuongHieu.tenTH)
+                                        @ViewBag.tenTH
                                     </td>
                                     <td class="col-sm-3">
                                         @{
@@ -94,7 +93,7 @@
 
                                     </td>
                                     <td style="color:red">
-                                        @string.Format("{0:#,##0}",item.donGia)
+                                        @string.Format("{0:#,##0}", item.donGia)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.soLuong)
@@ -110,7 +109,6 @@
                                         <p>
                                             @Html.ActionLink("Xoá", "Delete", new { id = item.maSP }, new { @class = "btn btn-danger" })
                                         </p>
-                                      
                                     </td>
                                 </tr>
                             }
@@ -124,5 +122,4 @@
     </div>
     <!-- /.container-fluid -->
 </div>
-
 
