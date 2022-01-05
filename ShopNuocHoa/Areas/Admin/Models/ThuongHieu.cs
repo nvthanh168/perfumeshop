@@ -17,6 +17,7 @@
 
         [Key]
         [StringLength(5)]
+        [Display(Name = "Mã thương hiệu")]
         public string maTH { get; set; }
 
         [Required]

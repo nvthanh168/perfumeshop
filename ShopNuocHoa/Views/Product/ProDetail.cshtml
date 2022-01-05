@@ -44,6 +44,12 @@
             <div class="col-lg-5">
                 <div class="product_details">
                     <div class="product_details_title">
+                        @{
+                            ThuongHieu th = ViewBag.TH as ThuongHieu;
+                            string tenTH = th.tenTH;
+                        }
+                        <a href="/Product/ProbyTH/@th.maTH"><h4 style="color:lightslategray">@tenTH</h4></a>
+                        
                         <h2>@Model.tenSP</h2>
                         <p>@Model.moTa</p>
                     </div>
@@ -115,7 +121,7 @@
             <div class="row">
                 <div class="col">
 
-                    <!-- Tab Description -->
+                    <!--mo ta san pham -->
                     <div id="tab_1" class="tab_container active">
                         <div class="row">
                             <div class="col-lg-5 desc_col">
@@ -123,13 +129,18 @@
                                     <h2>@Model.tenSP</h2>
                                     <p>@Model.moTa</p>
                                 </div>
+                                <div class="tab_text_block">
+                                    <h4 style="color:lightslategray">Brand Information</h4>
+                                    <h3>@th.tenTH</h3>
+                                    <p>@th.moTa</p>
+                                </div>
                             </div>
                             <div class="col-lg-5 offset-lg-2 desc_col">
                                 <div class="tab_image">
                                     <img src="~/Content/images/@Model.Anh" alt="">
                                 </div>
                             </div>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>

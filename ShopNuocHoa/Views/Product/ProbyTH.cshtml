@@ -14,8 +14,8 @@
 
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
-                    <li><a href="/Home/Index">Trang chủ</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Thương hiệu</a></li>
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Product/ProbyTH"><i class="fa fa-angle-right" aria-hidden="true"></i>Product brands</a></li>
                     @{
                         ThuongHieu th = ViewBag.TH as ThuongHieu;
                         if (th == null)
@@ -147,15 +147,21 @@
 
                             <br />
                             <br />
-                            <!-- Mo ta thuong hieu -->
-                            <div class="row">
-                                <div class="col">
-                                    <div class="tab_text_block">
-                                        <h4>@th.tenTH</h4>
-                                        <p>@th.moTa</p>
+                            @{
+                                if (th != null)
+                                {
+                                    <!-- Mo ta thuong hieu -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="tab_text_block">
+                                                <h4>@th.tenTH</h4>
+                                                <p>@th.moTa</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                }
+                            }
+
                         </div>
   
                 

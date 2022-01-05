@@ -14,8 +14,10 @@ namespace ShopNuocHoa.Controllers
         // GET: Product
         public ViewResult ProDetail(string id)
         {
-
+            ThuongHieu th;
             SanPham sp = db.get1sanPham(id);
+            th = thModel.get1TH(sp.maTH);
+            ViewBag.TH = th;
             ViewBag.LoaiSP = lspModel.get1LSP(sp.maLoai);
             return View(sp);
         }

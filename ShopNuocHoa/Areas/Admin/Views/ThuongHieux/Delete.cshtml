@@ -1,4 +1,4 @@
-﻿@model ShopNuocHoa.Areas.Admin.Models.LoaiSP
+﻿@model ShopNuocHoa.Areas.Admin.Models.ThuongHieu
 
 @{
     ViewBag.Title = "Delete";
@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h4 class="m-0 font-weight-bold text-danger">Xoá danh mục: @Html.DisplayFor(model => model.tenLoai)</h4>
+            <h4 class="m-0 font-weight-bold text-danger">Xoá thương hiệu: @Html.DisplayFor(model => model.tenTH)</h4>
             <h5>Bạn có chắc muốn xoá không ?</h5>
         </div>
         <div class="card-body">
@@ -16,27 +16,22 @@
             <dl class="dl-horizontal " width="100%" cellspacing="0">
 
                 <dt style="padding-bottom : 10px">
-                    @Html.DisplayNameFor(model => model.maLoai):
+                    @Html.DisplayNameFor(model => model.maTH):
                     <b>
-                        @Html.DisplayFor(model => model.maLoai)
+                        @Html.DisplayFor(model => model.maTH)
                     </b>
                 </dt>
 
                 <dt style="padding-bottom : 10px">
-                    @Html.DisplayNameFor(model => model.tenLoai):
+                    @Html.DisplayNameFor(model => model.tenTH):
                     <b>
-                        @Html.DisplayFor(model => model.tenLoai)
+                        @Html.DisplayFor(model => model.tenTH)
                     </b>
                 </dt>
 
                 <dt style="padding-bottom : 10px">
-                    @Html.DisplayNameFor(model => model.ghiChu): <b>@Html.DisplayFor(model => model.ghiChu)</b>
+                    @Html.DisplayNameFor(model => model.moTa): <b>@Html.DisplayFor(model => model.moTa)</b>
                 </dt>
-
-                <dt style="padding-bottom : 10px">
-                    @Html.DisplayNameFor(model => model.Anh) <img src="~/Content/images/@Html.DisplayFor(model => model.Anh)" width="200" height="100" />
-                </dt>
-
             </dl>
 
         </div>
@@ -47,11 +42,10 @@
             <div class="card-footer py-3">
                 <p>
                     <input type="submit" value="Delete" class="btn btn-danger" />
-                    <a class="btn btn-warning" href="/Admin/LoaiSPs/Index">Quay lại</a>
+                    <a class="btn btn-warning" href="/Admin/ThuongHieux/Index">Quay lại</a>
                 </p>
             </div>
         }
 
     </div>
 </div>
-
