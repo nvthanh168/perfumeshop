@@ -1875,8 +1875,10 @@
     <Content Include="Content\images\products\armaf-club-de-nuit-intense.jpg" />
     <Content Include="Content\images\products\club-de-nuit-woman12.jpg" />
     <Content Include="Content\images\products\dong-ho-calvin-klein-city.jpg" />
+    <Content Include="Content\images\products\dong-ho-calvin-klein-contrast-quartz-men.jpg" />
     <Content Include="Content\images\products\dong-ho-cho-nam-armani.jpg" />
     <Content Include="Content\images\products\dong-ho-gucci-g-timeless-mother-of-pearl-dial-ladies-watch.jpg" />
+    <Content Include="Content\images\products\dong-ho-gucci-horsebit-collction-mother-of-pearl-dial-ladies.jpg" />
     <Content Include="Content\images\products\dong-ho-nu-gucci-timeless-womens-watch-model.jpg" />
     <Content Include="Content\images\products\Eternity For Men.jpg" />
     <Content Include="Content\images\products\gio-den.jpg" />
@@ -1893,6 +1895,7 @@
     <Content Include="Content\images\products\vi-cam-tay-gucci-tiger-print-gg-supreme-wallet.jpg" />
     <Content Include="Content\images\products\vi-cam-tay-versace-small-mock-croc-print-leather-pouch.jpg" />
     <Content Include="Content\images\products\vi-da-gucci-print-gucci.jpg" />
+    <Content Include="Content\images\products\vi-gucci-gg-multicolour-wallet.jpg" />
     <Content Include="Content\images\products\vi-nam-tommy-hilfiger-men-s-thin-sleek-casual-bifold-wallet-with-6-credit-card-pockets.jpg" />
     <Content Include="Content\images\products\vi-nam-tommy-hilfiger-mens-ranger-passcase-brown-5673-02-mau-nau.jpg" />
     <Content Include="Content\images\tui_xach.jpg" />
