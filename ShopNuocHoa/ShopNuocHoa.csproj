@@ -148,6 +148,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DBModel.cs" />
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\LoaiSP.cs" />
     <Compile Include="Models\LoaiSPModels.cs" />
     <Compile Include="Models\SanPham.cs" />
@@ -1844,7 +1845,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\creditly.css" />
+    <Content Include="Content\css\easy-responsive-tabs.css" />
+    <Content Include="Content\css\flexslider.css" />
+    <Content Include="Content\css\fontawesome-all.css" />
+    <Content Include="Content\css\menu.css" />
+    <Content Include="Content\css\popuo-box.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\images\9290-hypersl.png" />
+    <Content Include="Content\images\cancel.png" />
     <Content Include="Content\images\dong_ho_nam.jpg" />
     <Content Include="Content\images\dong_ho_nu.jpg" />
     <Content Include="Content\images\map_marker.png" />
