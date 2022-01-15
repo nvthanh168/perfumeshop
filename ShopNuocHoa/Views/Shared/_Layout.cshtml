@@ -25,12 +25,13 @@
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="~/Content/plugins/OwlCarousel2-2.2.1/animate.css">
-   
+
     <link rel="stylesheet" type="text/css" href="~/Content/styles/responsive.css">
     <link href="~/Content/styles/single_responsive.css" rel="stylesheet" />
 
     <link href="~/Content/plugins/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
     <link href="~/Content/plugins/themify-icons/themify-icons.css" rel="stylesheet" />
+    @*<link href="~/Content/css/themify-icons.css" rel="stylesheet" />*@
 
 </head>
 
@@ -84,7 +85,7 @@
                                                         <li class="link_container">
                                                             <a href="/Product/ProCata/@dt.Rows[i][0].ToString()">@dt.Rows[i][1].ToString()</a>
                                                         </li>
-}
+                                                    }
                                                 </ul>
                                             </li>
 
@@ -95,14 +96,14 @@
                                            data-toggle="dropdown">Product brands</a>
                                         <ul class="dropdown-menu container-fluid">
                                             <li class="block-container">
-                                                
+
                                                 <ul class="block">
                                                     @for (int i = 0; i < dtTH.Rows.Count; i++)
                                                     {
                                                         <li class="link_container">
                                                             <a href="/Product/ProbyTH/@dtTH.Rows[i][0].ToString()">@dtTH.Rows[i][1].ToString()</a>
                                                         </li>
-}
+                                                    }
                                                 </ul>
                                             </li>
 
@@ -115,7 +116,9 @@
                                 </ul>
                                 <ul class="navbar_user">
                                     <li>
-                                    <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                        <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
+                                       
+                                    </li>
                                     <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                                     <li class="checkout">
                                         <a href="/GioHang/ShowCart">
@@ -132,7 +135,7 @@
                     </div>
                 </div>
             </div>
-
+         
         </header>
 
         <div class="fs_menu_overlay"></div>
@@ -150,8 +153,8 @@
                         <ul class="menu_selection">
                             @for (int i = 0; i < dt.Rows.Count; i++)
                             {
-                <li><a href="/Product/ProCata/@dt.Rows[i][0].ToString()">@dt.Rows[i][1].ToString()</a></li>
-}
+                                <li><a href="/Product/ProCata/@dt.Rows[i][0].ToString()">@dt.Rows[i][1].ToString()</a></li>
+                            }
 
                         </ul>
                     </li>
@@ -306,6 +309,7 @@
     <script src="~/Scripts/js/custom.js"></script>
     <script src="~/Content/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="~/Scripts/js/categories_custom.js"></script>
+    <script src="~/Scripts/js/jquery.counterup.min.js"></script>
 </body>
 
 </html>

@@ -21,28 +21,38 @@ namespace ShopNuocHoa.Controllers
             ViewBag.LoaiSP = lspModel.get1LSP(sp.maLoai);
             return View(sp);
         }
-        public ViewResult ProCata(string id)
+        public ActionResult ProCata(string id, string searchString)
         {
             LoaiSP lsp;
             List<SanPham> listSp;
             List<LoaiSP> list = lspModel.getAllLSP();
-            if (id == null)
+            if (id == null )
             {
-             
                 listSp = db.getAllSP();
                 ViewBag.tenLoai = "Tất cả sản phẩm";
+               
             }
             else
             {
                 lsp = lspModel.get1LSP(id);
-                listSp  = db.getSanPhambyLoai(id);
+                listSp = db.getSanPhambyLoai(id);
                 var tenlsp = lsp.tenLoai;
                 ViewBag.LoaiSP = lsp;
                 ViewBag.tenLoai = tenlsp;
+             
             }
-          
-            return View(listSp);
+            if (string.IsNullOrEmpty(searchString))
+            {
+                return View(listSp);
+            }
+            else
+            {
+                return View(listSp.Where(x => x.tenSP.Contains(searchString)));
+            }
+       
         }
+
+     
         public ViewResult ProbyTH(string id)
         {
             ThuongHieu th;

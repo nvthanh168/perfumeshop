@@ -1853,6 +1853,7 @@
     <Content Include="Content\css\menu.css" />
     <Content Include="Content\css\popuo-box.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\themify-icons.css" />
     <Content Include="Content\images\9290-hypersl.png" />
     <Content Include="Content\images\cancel.png" />
     <Content Include="Content\images\dong_ho_nam.jpg" />
@@ -1930,6 +1931,7 @@
     <Content Include="Scripts\js\contact_custom.js" />
     <Content Include="Scripts\js\custom.js" />
     <Content Include="Scripts\js\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\js\jquery.counterup.min.js" />
     <Content Include="Scripts\js\single_custom.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

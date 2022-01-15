@@ -9,8 +9,8 @@
 <div class="container product_section_container">
     <div class="row">
         <div class="col product_section clearfix">
-            <!-- Breadcrumbs -->
-
+            <br />
+           
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
                     <li><a href="/Home/Index">Home</a></li>
@@ -30,6 +30,7 @@
 
                 </ul>
             </div>
+
 
             @{
                 Html.RenderPartial("_Category");
@@ -70,16 +71,16 @@
                                     </li>
                                 </ul>
                                 <div class="pages d-flex flex-row align-items-center">
-                                    <div class="page_current">
-                                        <span>1</span>
-                                        <ul class="page_selection">
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                        </ul>
+                                    <div class="container ">
+
+                                        @using (Html.BeginForm("ProCata", "Product", FormMethod.Get))
+                                        {
+
+                                            @Html.TextBox("searchString", null, new { @class = "form-control-sm", @placeholder = "Search Here" })
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+                                        }
                                     </div>
-                                    <div class="page_total"><span>of</span> 3</div>
-                                    <div id="next_page" class="page_next"><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
+
                                 </div>
 
                             </div>
