@@ -47,7 +47,7 @@ namespace ShopNuocHoa.Controllers
             }
             else
             {
-                return View(listSp.Where(x => x.tenSP.Contains(searchString)));
+                return View(listSp.Where(s => s.tenSP.ToLower().Contains(searchString.ToLower())));
             }
        
         }
